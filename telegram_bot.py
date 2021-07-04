@@ -22,6 +22,6 @@ def send_chart_screenshot(message):
         
 while True:
     try:
-        bot.polling()
+        bot.infinity_polling()
     except:
         continue
