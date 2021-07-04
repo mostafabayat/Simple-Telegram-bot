@@ -5,8 +5,8 @@ After=network.target
 [Service]
 Type=simple
 ExecStart=/usr/bin/python3 /opt/telegram.py
-StandardOutput=append:/var/log/http-server.log
-StandardError=append:/var/log/http-server.log
+StandardOutput=append:/var/log/telegram-bot.log
+StandardError=append:/var/log/telegram-bot.log
 Restart=on-failure
 
 [Install]
