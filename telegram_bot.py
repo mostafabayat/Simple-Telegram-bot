@@ -19,4 +19,9 @@ def send_chart_screenshot(message):
     except OSError:
         bot.reply_to(message, "متاسفانه این سهم وجود ندارد!")
 
-bot.polling()
+        
+while True:
+    try:
+        bot.polling()
+    except:
+        continue
