@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /opt/telegram.py
+ExecStart=/usr/bin/python3 /opt/telegram_bot.py
 StandardOutput=append:/var/log/telegram-bot.log
 StandardError=append:/var/log/telegram-bot.log
 Restart=on-failure
