@@ -47,3 +47,35 @@ useradd -m ftpuser
 passwd ftpuser
 ```
 FTP Server is ready now!
+
+## How to start a telegram bot service
+1. Create a Bot in `@BotFather`
+    1. Start the Bot
+    2. Send `/newbot`
+    3. Choose a name for your bot
+    4. Choose a username that ends with "bot"
+    5. Pick your Token!\
+    ![6](https://user-images.githubusercontent.com/45286878/128627276-55fe052a-8b27-400d-8d2e-525bc9215b3a.jpg)
+2. Deploy `telegram_bot.py`
+    1. Download the `telegram_bot.py` to on your Desktop
+    2. Replace `botToken` string in the `telegram_bot.py` with the Token that BotFather gave you
+    3. copy `telegram.py` to your server (in /opt directory)
+    ```
+    scp /mnt/c/Users/Mosi/Desktop/telegram_bot.py root@65.21.21.21:/opt
+    ```
+    4. Download and copy `telegram_bot.service` to `/lib/systemd/system` directory
+    ```
+    scp /mnt/c/Users/Mosi/Desktop/telegram_bot.service root@65.21.21.21:/lib/systemd/system/
+    ```
+    5. ssh to your server and install dependencies
+    ```
+    sudo apt install python3-pip
+    pip install pyTelegramBotAPI
+    ```
+    6. Enable and start telegram service
+    ```
+    systemctl daemon-reload
+    systemctl enable telegram_bot.service
+    systemctl start telegram_bot.service
+    ```
+    Enjoy!
